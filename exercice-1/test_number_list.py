@@ -13,3 +13,9 @@ def convert_to_integer(input_list: list) -> list:
       continue
     output_list.append(v)
   return output_list
+
+
+def test_convert_to_integer():
+  """assert convert_to_integer(isinstance([1,2,3], int))"""
+  assert convert_to_integer(["a", "/", 4, 7])
+  assert convert_to_integer([1, 3, 4, 7])
