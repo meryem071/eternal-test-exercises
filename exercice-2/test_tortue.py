@@ -1,3 +1,46 @@
+from typing_extensions import Self
+
+
+class Tortue:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+        self.orientation = 'right'  
+
+    def walk(self, distance):
+        """Avance la tortue de la distance spécifiée selon son orientation."""
+        if self.orientation == 'right':
+            self.x += distance
+        elif self.orientation == 'left':
+            self.x -= distance
+        elif self.orientation == 'down':
+            self.y += distance
+        elif self.orientation == 'up':
+            self.y -= distance
+
+    def look_up(self):
+        """Permet à la tortue de regarder vers le haut."""
+        self.orientation = 'up'
+
+    def look_down(self):
+        """Permet à la tortue de regarder vers le bas."""
+        self.orientation = 'down'
+
+    def look_left(self):
+        """Permet à la tortue de regarder vers la gauche."""
+        self.orientation = 'left'
+
+    def look_right(self):
+        """Permet à la tortue de regarder vers la droite."""
+        self.orientation = 'right'
+
+    def teleport(self, x, y):
+        """Téléporte la tortue aux coordonnées spécifiées."""
+        self.x = x
+        self.y = y
+
+
+
 def test_move_tortue():
   """On teste une classe Tortue(origine_x, origine_y) pourvue des méthodes walk(int), et look_<direction>()
   ainsi que teleport(x, y).
@@ -40,3 +83,12 @@ def test_move_tortue():
   assert t.x == 6 and t.y == 5
   t.teleport(21, 42)
   assert t.x == 21 and t.y == 42
+
+""" def move_tortue(x, y):
+  t = (x,y)
+  if (t.walk() or t.look.right()) :
+    t.x += 1
+    t.y += 1
+  else :
+    t.x -= 1
+    t.y -= 1 """
